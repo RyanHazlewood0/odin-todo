@@ -1,35 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: grey;
-    color: aliceblue
+    color: aliceblue;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    margin-top: 0px;
+    
+    justify-content: center;
 }
 
 h1 {
     display: flex;
-    justify-content: center;
-}
-
-#containerModal {
- display: flex;
- justify-content: center;
- margin-top: 25px;
-}
-
-#openModal {
-    background-color: blueviolet;
+    justify-content: center;    
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 45px;
     color: aliceblue;
-    width: 60px;
-    height: 50px;
-    font-size: 30px;
-    border: 2px solid aliceblue;
 }
 
+#side-list {
+    margin-top: 60px;
+    height: 100%;
+    width: 20%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
 
-#newModal {
-    display: block;
-    height: 500px;
-    width: 400px;
-    background-color: blueviolet;
-    color: aliceblue;
-} 
+#add-to-do, #add-project {
+    width: 70%;
+    height: 40px;
+    background-color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+
 
 
