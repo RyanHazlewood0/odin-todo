@@ -17,6 +17,34 @@
 <button id="add-project">Add new project</button>
 </div>
 
+<div class="modal" id="modal">
+ <div class="modal-inner" id="modal-inner">
+<h2 id="modal-title">Add details:</h2>
+<br>
+    <form id="consent-form">
+            <input type="text" name="title" placeholder="Title" id="title" required/>
+            <br>
+            <input type="text" name="description" placeholder="Description" id="description" required/>
+            <br>
+            <label for="date" id="date-label">Due date</label>
+            <br>
+            <input type="date" name="dueDate" placeholder="Date" id="date" required/>
+            <br>
+            <label for="priority" id="priority-label">Priority</label>
+            <br>
+            <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+<div class="modal-choice-btns" id="modal-choice-btns">
+                <button type="submit" class="modal-btn">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
