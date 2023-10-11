@@ -4,33 +4,33 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
+    <title>To do list</title>
 </head>
 <body>
 
     <header>
-        <h1>To Do List</h1>
+        <h1>To do List</h1>
     </header>
-
-    <div id="side-list">
-<button id="add-to-do">Add new to do</button>
-<button id="add-project">Add new project</button>
-</div>
 
 <div class="modal" id="modal">
  <div class="modal-inner" id="modal-inner">
+    <p id="close-modal-btn">X</p>
 <h2 id="modal-title">Add details:</h2>
 <br>
-    <form id="consent-form">
-            <input type="text" name="title" placeholder="Title" id="title" required/>
+    <form id="modal-form">
+            <label for="title" id="title-label">Title:</label>
+            <br>
+        <input type="text" name="title" placeholder="Title" id="title" required/>
+            <br>
+            <label for="description" id="description-label">Description:</label>
             <br>
             <input type="text" name="description" placeholder="Description" id="description" required/>
             <br>
-            <label for="date" id="date-label">Due date</label>
+            <label for="date" id="date-label">Due date:</label>
             <br>
             <input type="date" name="dueDate" placeholder="Date" id="date" required/>
             <br>
-            <label for="priority" id="priority-label">Priority</label>
+            <label for="priority" id="priority-label">Priority:</label>
             <br>
             <select name="priority" id="priority">
                 <option value="low">Low</option>
@@ -41,8 +41,20 @@
                 <button type="submit" class="modal-btn">Submit</button>
             </div>
         </form>
-
     </div>
+</div>
+
+<div id="main-container">
+
+<div id="side-list">
+    <button id="add-to-do">Add new to do</button>
+    <button id="add-project">Add new project</button>
+    </div>
+
+<div id="to-do-container">
+   
+</div>
+
 </div>
 
     <script src="script.js"></script>
