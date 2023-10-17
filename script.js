@@ -34,23 +34,40 @@ closeModal.addEventListener('click', function() {
 })
 
 function displayToDos() {
-  toDoContainer.innerHTML += 
+  toDoContainer.innerHTML = ''
+  
+myToDos.forEach(function(toDo, index,) {
+
+  const toDoEntry = document.createElement('div')
+  toDoEntry.id = 'toDoEntry'
+  toDoEntry.innerHTML = 
   `
-  <div id="toDoEntry">
-  ${titleLabel.textContent} ${titleInput.value}<br>
-  <button class="expand-collapse-btn">expand / collapse details</button><br>
+  ${titleLabel.textContent} ${toDo.title}<br>
+  <div class="to-do-btns-container">
+    <button class="expand-collapse-btn">expand / collapse details</button><br>
+    <button class="delete-to-do-btn" data-index="${index}">delete</button>
+  </div>
   <div class="expand-collapse-content" style="display: none;">
-   ${descriptionLabel.textContent} ${descriptionInput.value}<br> 
-  ${dateLabel.textContent}  ${dateInput.value}<br>
-  ${priorityLabel.textContent}  ${priorityInput.value}
+    ${descriptionLabel.textContent} ${toDo.description}<br> 
+    ${dateLabel.textContent}  ${toDo.dueDate}<br>
+    ${priorityLabel.textContent}  ${toDo.priority}
   </div>
-  </div>
-  `
+`
+const deleteButton = toDoEntry.querySelector('.delete-to-do-btn');
+    deleteButton.addEventListener('click', function() {
+      const toDoIndex = parseInt(this.getAttribute('data-index'));
+      myToDos.splice(toDoIndex, 1);
+      displayToDos();
+    });
+
+    toDoContainer.appendChild(toDoEntry)
+
   titleInput.value = ''
   descriptionInput.value = ''
   dateInput.value = ''
   priorityInput.value = ''
   modal.style.display = 'none'
+})
 
   let expandCollapseBtns = document.getElementsByClassName('expand-collapse-btn')
 let expandCollapseContent = document.getElementsByClassName('expand-collapse-content')
@@ -63,7 +80,6 @@ for(let i = 0; i < expandCollapseBtns.length; i++)
       expandCollapseContent[i].style.display = 'none'
     }
   })
-
 }
 
 modalForm.addEventListener('submit', function(event) {
@@ -72,7 +88,4 @@ modalForm.addEventListener('submit', function(event) {
   myToDos.push(newToDo)
 displayToDos()
 })
-
-
-
-
+  

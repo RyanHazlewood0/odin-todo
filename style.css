@@ -124,10 +124,14 @@ h1 {
     cursor: pointer;
 }
 
-.expand-collapse-btn {
+.expand-collapse-btn, .delete-to-do-btn {
     height: 30px;
     width: 155px;
     background-color: beige;
-    color: black
+    color: black;
 }
 
+.to-do-btns-container {
+display: flex;
+justify-content: space-between;
+}
